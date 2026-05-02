@@ -7,6 +7,7 @@ public class OyuncuKontrolcusu : MonoBehaviour
     [SerializeField] private float hiz = 5f;
     [SerializeField] private float ziplamaGucu = 6f;
     [SerializeField] private GameObject coinPrefab;
+    [SerializeField] private Animator animator;
     public int can = 3;
     public int maxCan = 5;
 
@@ -29,9 +30,15 @@ public class OyuncuKontrolcusu : MonoBehaviour
 
         if (yerdeMi && space)
         {
-            rb.AddForce(Vector3.up * ziplamaGucu, ForceMode.Impulse);
-            yerdeMi = false;
+            animator.SetTrigger("Zipla");
         }
+    }
+
+    public void Zipla()
+    {
+        rb.AddForce(Vector3.up * ziplamaGucu, ForceMode.Impulse);
+        yerdeMi = false;
+        animator.ResetTrigger("Zipla");
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -39,6 +46,7 @@ public class OyuncuKontrolcusu : MonoBehaviour
         if (collision.gameObject.CompareTag("Zemin"))
         {
             yerdeMi = true;
+            animator.SetTrigger("Dus");
         }
     }
 

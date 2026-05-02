@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CoinSystem : MonoBehaviour
 {
+    public SesYoneticisi sesYoneticisi;
     public List<Coin> coins;
 
     public float tekrarAktiveEtSaniye = 5f;
@@ -38,5 +39,6 @@ public class CoinSystem : MonoBehaviour
     {
         coin.beklenen = 0f;
         coin.gameObject.SetActive(false);
+        sesYoneticisi.CoinSesiCal();
     }
 }

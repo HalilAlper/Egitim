@@ -160,6 +160,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b28cef5103f22e4418ee98e279180e01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Coin
+  beklenen: 0
+  coinSystem: {fileID: 0}
 --- !u!95 &604170429464711367
 Animator:
   serializedVersion: 7
